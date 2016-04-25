@@ -1,17 +1,95 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="controls_if" id="1" inline="false" x="105" y="45">
+    <value name="IF0">
+      <block type="sensor_button" id="95">
+        <field name="OBJECT">UP</field>
+      </block>
+    </value>
     <statement name="DO0">
       <block type="movement_forward" id="2">
         <next>
           <block type="movement_stop" id="3">
             <next>
-              <block type="comment_comment" id="4">
-                <field name="TEXT">hello , it's nice to meet you. I'm your most reliable jade robot in history.</field>
-                <next>
-                  <block type="comment_comment" id="5">
-                    <field name="TEXT">I will do whatever you command. Also I will get anything you want.</field>
+              <block type="controls_if" id="128" inline="false">
+                <value name="IF0">
+                  <block type="sensor_object" id="104">
+                    <field name="OBJECT">LEFTFRONT</field>
                   </block>
-                </next>
+                </value>
+                <statement name="DO0">
+                  <block type="comment_comment" id="30">
+                    <field name="TEXT">beep boop bob</field>
+                    <next>
+                      <block type="comment_comment" id="4">
+                        <field name="TEXT">hello , it's nice to meet you. I'm your most reliable jade robot in history.</field>
+                        <next>
+                          <block type="comment_comment" id="5">
+                            <field name="TEXT">I will do whatever you command. Also I will get anything you want.</field>
+                            <next>
+                              <block type="movement_forward" id="57">
+                                <next>
+                                  <block type="movement_reverse" id="67">
+                                    <next>
+                                      <block type="movement_left" id="77">
+                                        <next>
+                                          <block type="movement_right" id="87">
+                                            <next>
+                                              <block type="movement_stop" id="88">
+                                                <next>
+                                                  <block type="controls_if" id="154" inline="false">
+                                                    <value name="IF0">
+                                                      <block type="math_random" id="147"></block>
+                                                    </value>
+                                                    <statement name="DO0">
+                                                      <block type="controls_whileUntil" id="164" inline="false">
+                                                        <field name="MODE">UNTIL</field>
+                                                        <value name="NUMBER">
+                                                          <block type="math_number" id="228">
+                                                            <field name="NUM">87</field>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO">
+                                                          <block type="multimedia_playwav" id="184">
+                                                            <field name="WAV">Ding!</field>
+                                                          </block>
+                                                        </statement>
+                                                        <next>
+                                                          <block type="controls_if" id="235" inline="false">
+                                                            <value name="IF0">
+                                                              <block type="multimedia_pollwav" id="262"></block>
+                                                            </value>
+                                                            <statement name="DO0">
+                                                              <block type="expansion_exp1power" id="219">
+                                                                <field name="SERVO">ON</field>
+                                                                <next>
+                                                                  <block type="expansion_exp2power" id="244">
+                                                                    <field name="SERVO">OFF</field>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
               </block>
             </next>
           </block>
